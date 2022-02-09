@@ -1,0 +1,105 @@
+/* google fonts  */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap');
+
+/* general styles  */
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Cairo', sans-serif;
+}
+a{
+    color: #000;
+    text-decoration: none;
+}
+ul{
+    list-style-type: none;
+}
+img{
+    width: 100%;
+}
+.container{
+    width: 90%;
+    margin: auto;
+}
+
+
+/* start header styles  */
+header{
+   background-color: #333;
+   position: fixed;
+   width: 100%;
+}
+.header-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-content figure{
+    width: 30%;
+}
+.header-content .navigation{
+    width: 60%;
+}
+.header-content .navigation i{
+    display: none;
+}
+.header-content img{
+    width: 100px;
+}
+.header-content .nav-list{
+    display: flex ;
+    justify-content: space-between;
+}
+.header-content .nav-list a{
+    color: #fff;
+    transition: all 0.5s;
+}
+.header-content .nav-list a.active , 
+.header-content .nav-list a:hover{
+    color: orange;
+    
+}
+.header-content .nav-list a.active::after,
+.header-content .nav-list a:after{
+    content: "";
+    display: block;
+    height: 2px;
+    background-color: #fff;
+    width: 0%;
+    transition: width 0.5s;
+}
+.header-content .nav-list a.active::after{
+    width: 100%;
+}
+.header-content .nav-list a:hover::after{
+    width: 100%;
+}
+
+@media (max-width : 768px) {
+    .header-content .navigation{
+        position: relative;
+    }
+    .header-content .navigation i{
+        display: block;
+        text-align: right;
+        color: #fff;
+        font-size: 1.2em;
+    }
+    .header-content .nav-list{
+        display: none;
+    }
+    .header-content .navigation:hover .nav-list{
+        display: block;
+        position: absolute;
+        background-color: #333;
+        width: 150px;
+        right: 0px;
+        text-align: center;
+    }
+    .header-content .navigation:hover .nav-list a{
+        display: block;
+    }
+}
