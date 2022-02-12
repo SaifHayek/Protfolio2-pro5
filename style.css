@@ -59,25 +59,40 @@ img{
    margin-top: 80px;
    margin-bottom: 80px;
 }
-.left-to-right-ef{
+.left-to-right-ef ,
+.top-to-bottom-ef{
     position: relative;
    
 }
-.left-to-right-ef::after{
+.left-to-right-ef::after ,
+.top-to-bottom-ef::after{
     content: "";
     position: absolute;
     left: 0%;
     top: 0%;
     right: 0%;
     bottom: 0%;
-    height: 100%;
-    width: 0%;
     background-color: rgb(31, 30, 30);
     z-index: -1;
+    
+}
+.left-to-right-ef::after{
+    height: 100%;
+    width: 0%;
     transition: width 0.5s;
 }
+
 .left-to-right-ef:hover::after{
     width: 100%;
+}
+
+.top-to-bottom-ef::after{
+    width: 100%;
+    height: 0%;
+    transition: height 0.5s;
+}
+.top-to-bottom-ef:hover::after{
+    height: 100%;
 }
 
 /* start header styles  */
@@ -337,4 +352,78 @@ header{
 
 }
 
+/* start pricing section style  */
 
+.prices-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+    gap: 50px;
+}
+.prices-content .price{
+    border: 1px solid #ddd;
+    text-align: center;
+    padding: 30px 15px;
+}
+
+.prices-content .price h3{
+     color: gray;
+     font-weight: 400;
+     font-size: 1.2em;
+     transition: color 0.5s;
+}
+.prices-content .price .dollar{
+    border: 1px solid orange;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin: 15px auto;
+    text-transform: capitalize;
+    transition: color 0.5s;
+}
+.prices-content .price .dollar span{
+    /* display: block; */
+    font-size: 2em;
+    font-weight: 700;
+    /* margin-bottom: -10px; */
+}
+.prices-content .price p{
+    color: #777;
+    font-size: 0.9em;
+}
+.prices-content .price .btn{
+    color: orange;
+    border: solid 1px orange;
+    font-weight: 500;
+    display: inline-block;
+    padding: 10px;
+    margin-top: 12px;
+}
+.prices-content .price:hover h3{
+   color: orange;
+}
+.prices-content .price:hover .dollar{
+    color: white;
+}
+@media (min-width: 1199px) {
+    .prices-content{
+        grid-template-columns: repeat(auto-fill ,minmax(350px , 1fr));
+
+    }
+}
+@media (min-width: 1599px) {
+    body{
+        font-size: 20px;
+    }
+    .prices-content{
+        grid-template-columns: repeat(auto-fill ,minmax(650px , 1fr));
+
+    }
+    .prices-content .price .dollar{
+        width: 120px;
+        height: 120px;
+    }
+}
