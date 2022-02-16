@@ -505,3 +505,12 @@ header{
         margin: 20px auto;
     }
 }
+
+/* start footer section  */
+footer{
+    background-color: #333;
+    color: orange;
+    text-align: center;
+    padding: 10px;
+    font-size: 1.1em;
+}
